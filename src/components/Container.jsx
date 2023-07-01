@@ -7,6 +7,11 @@ import {WiHumidity} from "react-icons/wi"
 import {MdVisibility} from "react-icons/md"
 import {TbGauge} from "react-icons/tb"
 import Loading from "./Loading"
+import clear from '../../src/assets/clear.png'
+import cloud from '../../src/assets/cloud.png'
+import mist from '../../src/assets/mist.png'
+import rain from '../../src/assets/rain.png'
+import snow from '../../src/assets/snow.png'
 
 const Container = () => {
   const [emptyContent, setEmptyContent] = useState(false)
@@ -39,19 +44,19 @@ const Container = () => {
   const generateImg = () => {
     switch (data.weather && data.weather[0].main) {
       case "Clear":
-        setWeatherImg('../../src/assets/clear.png')
+        setWeatherImg(clear)
         break;
       case "Clouds":
-        setWeatherImg('../../src/assets/cloud.png')
+        setWeatherImg(cloud)
         break;
       case "Mist":
-        setWeatherImg('../../src/assets/mist.png')
+        setWeatherImg(mist)
         break;
       case "Rain":
-        setWeatherImg('../../src/assets/rain.png')
+        setWeatherImg(rain)
         break;
       case "Snow":
-        setWeatherImg('../../src/assets/snow.png')
+        setWeatherImg(snow)
         break;
       default:
         setWeatherImg('')
@@ -77,7 +82,7 @@ const Container = () => {
         {data.cod == 200 ? 
         <>
           <div className="flex flex-col items-center gap-y-6 relative">
-            <img src={weatherImg ? weatherImg : ''} alt="weather" className={`${weatherImg ? 'w-56' : 'hidden'}`} />
+            <img src={ weatherImg} alt="weather" className={`${weatherImg ? 'w-56' : 'hidden'}`} />
             <div className="relative">
               <span className="text-4xl font-bold">{parseInt(data.main?.temp - 273.15)}</span>
               <span className="absolute -top-2 -right-6 text-2xl font-bold">°C</span>
