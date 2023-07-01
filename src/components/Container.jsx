@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import { AiOutlineSearch } from "react-icons/ai"
 import { TiLocation } from "react-icons/ti"
@@ -38,19 +39,19 @@ const Container = () => {
   const generateImg = () => {
     switch (data.weather && data.weather[0].main) {
       case "Clear":
-        setWeatherImg('../src/assets/clear.png')
+        setWeatherImg('../../src/assets/clear.png')
         break;
       case "Clouds":
-        setWeatherImg('../src/assets/cloud.png')
+        setWeatherImg('../../src/assets/cloud.png')
         break;
       case "Mist":
-        setWeatherImg('../src/assets/mist.png')
+        setWeatherImg('../../src/assets/mist.png')
         break;
       case "Rain":
-        setWeatherImg('../src/assets/rain.png')
+        setWeatherImg('../../src/assets/rain.png')
         break;
       case "Snow":
-        setWeatherImg('../src/assets/snow.png')
+        setWeatherImg('../../src/assets/snow.png')
         break;
       default:
         setWeatherImg('')
