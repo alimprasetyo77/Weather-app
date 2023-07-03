@@ -12,7 +12,7 @@ import cloud from '../../src/assets/cloud.png'
 import mist from '../../src/assets/mist.png'
 import rain from '../../src/assets/rain.png'
 import snow from '../../src/assets/snow.png'
-
+import haze from '../../src/assets/haze.png'
 const Container = () => {
   const [emptyContent, setEmptyContent] = useState(false)
   const [data, setData] = useState([])
@@ -57,7 +57,10 @@ const Container = () => {
         break;
       case "Snow":
         setWeatherImg(snow)
-        break;
+      break;
+      case "Haze" :
+        setWeatherImg(haze)
+      break;
       default:
         setWeatherImg('')
         break;
@@ -66,7 +69,7 @@ const Container = () => {
 
 
   return (
-    <div className={`${emptyContent ? "h-[75px] " : "h-[650px]"}  duration-500 ease-out bg-white  w-[500px] rounded-2xl px-8 py-4 overflow-hidden`}>
+    <div className={`${emptyContent ? "h-[75px] " : "h-[650px]"}  duration-500 ease-out bg-white  w-[500px] rounded-2xl px-8 py-4 overflow-hidden `}>
       <form onSubmit={fetchData} className="flex items-center justify-between">
         <TiLocation className="text-3xl" />
         <div className="w-full px-8">
